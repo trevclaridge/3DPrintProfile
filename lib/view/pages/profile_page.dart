@@ -32,6 +32,7 @@ class MyProfilePage extends StatelessWidget {
           children: const <Widget>[
             Text(
               'Profile Page',
+              style: TextStyle(color: Palette.text),
             ),
           ],
         ),

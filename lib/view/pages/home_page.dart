@@ -8,17 +8,18 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const PAppBar(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            OutlinedButton(
-              child: const Text(
-                'Go to Profile',
-              ),
-              onPressed: () => Navigator.pushNamed(context, 'profile'),
-            ),
-          ],
+      body: ListView.separated(
+        physics: const BouncingScrollPhysics(),
+        itemCount: 20,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text('$index'),
+            tileColor: Palette.white,
+            onTap: () {},
+          );
+        },
+        separatorBuilder: (BuildContext context, int index) => const Divider(
+          color: Colors.white,
         ),
       ),
     );
