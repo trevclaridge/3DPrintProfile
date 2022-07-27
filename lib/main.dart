@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:print_profile/model/model.dart';
 import 'package:print_profile/view/view.dart';
 
 void main() {
@@ -17,8 +18,7 @@ class MyApp extends StatelessWidget {
       initialRoute: 'home',
       routes: <String, WidgetBuilder>{
         'home': (context) => const MyHomePage(title: '3DPrintProfile: Home'),
-        'profile': (context) =>
-            const MyProfilePage(title: '3DPrintProfile: Profile')
+        'profile': (context) => MyProfilePage(title: '3DPrintProfile: Profile')
       },
     );
   }
