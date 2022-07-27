@@ -7,7 +7,25 @@ class MyProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const PAppBar(),
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () => Navigator.pushNamed(context, 'home'),
+          icon: const Icon(Icons.home),
+        ),
+        title: const Text('3DPrintProfile: Profile'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text("Settings Not Implemented"),
+                ),
+              );
+            },
+            icon: const Icon(Icons.settings),
+          ),
+        ],
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
