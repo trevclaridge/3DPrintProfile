@@ -14,9 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: '3DPrintProfile',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: CustomTheme.defaultTheme,
       initialRoute: 'home',
       routes: <String, WidgetBuilder>{
         'home': (context) => const MyHomePage(title: '3DPrintProfile: Home'),
