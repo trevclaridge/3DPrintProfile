@@ -50,17 +50,27 @@ class _MyProfilePageState extends State<MyProfilePage> {
                 _futureUser = MMFAPI().fetchMMFUser('trevorclaridge');
                 setState(() {});
               },
-              child: const Text('Login'),
+              child: const Text('API Request'),
+            ),
+            OutlinedButton(
+              onPressed: () {
+                _launchURL(MMFAuth().url);
+              },
+              child: const Text('MMF OAuth2 Code'),
             ),
             FutureBuilder<MMFUser>(
               future: _futureUser,
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
-                  return Text(snapshot.data!.username!,
-                      style: const TextStyle(color: Palette.text));
+                  return Text(
+                    snapshot.data!.username!,
+                    style: const TextStyle(color: Palette.text),
+                  );
                 } else if (snapshot.hasError) {
-                  return Text('${snapshot.error}',
-                      style: const TextStyle(color: Palette.text));
+                  return Text(
+                    '${snapshot.error}',
+                    style: const TextStyle(color: Palette.text),
+                  );
                 }
 
                 // By default, show a loading spinner.
@@ -71,5 +81,13 @@ class _MyProfilePageState extends State<MyProfilePage> {
         ),
       ),
     );
+  }
+
+  _launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }

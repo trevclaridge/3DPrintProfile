@@ -10,6 +10,7 @@ class MMFAPI {
 
   String _baseUrl = 'https://www.myminifactory.com/api/v2/';
   String _apiKey = '36be06aa-5d9d-4346-bfeb-7e9cd8eb9f9b';
+  String _clientId = '3DPrintingProfile';
 
   Future<MMFUser> fetchMMFUser(String user) async {
     final response = await http.get(

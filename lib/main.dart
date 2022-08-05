@@ -3,6 +3,10 @@ import 'package:print_profile/model/model.dart';
 import 'package:print_profile/view/view.dart';
 
 void main() {
+  var url = Uri.base;
+  if (url.toString().contains('code=')) {
+    MMFAuth().fetchAuthCode(url.toString());
+  }
   runApp(const MyApp());
 }
 
