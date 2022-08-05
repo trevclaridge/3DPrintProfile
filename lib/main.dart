@@ -7,6 +7,7 @@ void main() {
   if (url.contains('code=')) {
     var code = MMFAuth().fetchAuthCode(url);
     print(code);
+    MMFAuth().fetchAthenticationToken(code!);
   }
   runApp(const MyApp());
 }
