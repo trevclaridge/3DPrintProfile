@@ -5,7 +5,8 @@ import 'package:print_profile/view/view.dart';
 void main() {
   var url = Uri.base.toString();
   if (url.contains('code=')) {
-    MMFAuth().fetchAuthCode(url);
+    var code = MMFAuth().fetchAuthCode(url);
+    print(code);
   }
   runApp(const MyApp());
 }
