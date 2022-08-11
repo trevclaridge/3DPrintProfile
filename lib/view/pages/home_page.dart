@@ -9,18 +9,15 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: const PAppBar(),
       body: ListView.separated(
-        physics: const BouncingScrollPhysics(),
         itemCount: 20,
+        padding: const EdgeInsets.all(15.0),
         itemBuilder: (context, index) {
-          return ListTile(
-            title: Text('$index'),
-            tileColor: Palette.white,
-            onTap: () {},
-          );
+          return const FeedBlock(
+              style: BlockStyle.patreon, title: "Patreon Block");
         },
-        separatorBuilder: (BuildContext context, int index) => const Divider(
-          color: Colors.white,
-        ),
+        separatorBuilder: (BuildContext context, int index) {
+          return const FeedBlock(style: BlockStyle.mmf, title: "MMF Block");
+        },
       ),
     );
   }
