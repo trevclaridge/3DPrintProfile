@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:print_profile/model/model.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'dart:ui';
 
 part 'pages/home_page.dart';
 part 'pages/profile_page.dart';

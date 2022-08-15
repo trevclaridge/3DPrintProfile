@@ -11,3 +11,4 @@ part 'mmf/mmf_api.dart';
 part 'mmf/mmf_auth.dart';
 part 'mmf/schema/mmf_object.dart';
 part 'mmf/schema/mmf_user.dart';
+part 'test_data/test_data.dart';
