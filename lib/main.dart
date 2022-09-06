@@ -3,8 +3,6 @@ import 'package:print_profile/view/view.dart';
 import 'package:print_profile/model/model.dart';
 
 void main() {
-  print(const String.fromEnvironment('MMF_SECRET',
-      defaultValue: 'environment secret not set'));
   Startup().startUp();
   runApp(const MyApp());
 }
