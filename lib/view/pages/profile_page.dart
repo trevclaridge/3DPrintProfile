@@ -16,7 +16,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
   void initState() {
     super.initState();
 
-    _futureUser = MMFAPI().fetchMMFUser('');
+    // _futureUser = MMFAPI().fetchMMFUser('');
   }
 
   @override
@@ -45,34 +45,34 @@ class _MyProfilePageState extends State<MyProfilePage> {
         child: ListView(
           shrinkWrap: true,
           children: <Widget>[
-            OutlinedButton(
-              onPressed: () {
-                _futureUser = MMFAPI().fetchMMFUser('trevorclaridge');
-                setState(() {});
-              },
-              child: const Text('API Request'),
-            ),
-            Center(
-              child: FutureBuilder<MMFUser>(
-                future: _futureUser,
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    return Text(
-                      snapshot.data!.username!,
-                      style: const TextStyle(color: Palette.text),
-                    );
-                  } else if (snapshot.hasError) {
-                    return Text(
-                      '${snapshot.error}',
-                      style: const TextStyle(color: Palette.text),
-                    );
-                  }
+            // OutlinedButton(
+            //   onPressed: () {
+            //     _futureUser = MMFAPI().fetchMMFUser('trevorclaridge');
+            //     setState(() {});
+            //   },
+            //   child: const Text('API Request'),
+            // ),
+            // Center(
+            //   child: FutureBuilder<MMFUser>(
+            //     future: _futureUser,
+            //     builder: (context, snapshot) {
+            //       if (snapshot.hasData) {
+            //         return Text(
+            //           snapshot.data!.username!,
+            //           style: const TextStyle(color: Palette.text),
+            //         );
+            //       } else if (snapshot.hasError) {
+            //         return Text(
+            //           '${snapshot.error}',
+            //           style: const TextStyle(color: Palette.text),
+            //         );
+            //       }
 
-                  // By default, show a loading spinner.
-                  return const CircularProgressIndicator();
-                },
-              ),
-            ),
+            //       // By default, show a loading spinner.
+            //       return const CircularProgressIndicator();
+            //     },
+            //   ),
+            // ),
             InkWell(
               onTap: () => _launchURL(AuthProviders.mmf.authUrl!),
               child: SignInWithButton(
@@ -89,7 +89,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
 
   _launchURL(String url) async {
     if (await canLaunch(url)) {
-      await launch(url);
+      await launch(url, webOnlyWindowName: '_self');
     } else {
       throw 'Could not launch $url';
     }

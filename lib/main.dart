@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:print_profile/view/view.dart';
+import 'package:print_profile/model/model.dart';
 
 void main() {
-  // Startup().startUp();
+  Startup().startUp();
   runApp(const MyApp());
 }
 

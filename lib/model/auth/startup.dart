@@ -1,12 +1,14 @@
 part of model;
 
 class Startup {
-  void startUp() {
+  void startUp() async {
     var url = Uri.base.toString();
     if (url.contains('code=')) {
       var code = MMFAuth().fetchAuthCode(url);
       print('code: $code');
-      MMFAuth().fetchAthenticationToken(code!);
+      AuthenticationToken token =
+          await MMFAuth().fetchAthenticationToken(code!);
+      print('code: $token');
     }
   }
 }
