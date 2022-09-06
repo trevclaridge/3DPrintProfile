@@ -42,8 +42,8 @@ class _MyProfilePageState extends State<MyProfilePage> {
         ],
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
+          shrinkWrap: true,
           children: <Widget>[
             OutlinedButton(
               onPressed: () {
@@ -52,31 +52,35 @@ class _MyProfilePageState extends State<MyProfilePage> {
               },
               child: const Text('API Request'),
             ),
-            OutlinedButton(
-              onPressed: () {
-                _launchURL(MMFAuth().url);
-              },
-              child: const Text('MMF OAuth2 Code'),
-            ),
-            FutureBuilder<MMFUser>(
-              future: _futureUser,
-              builder: (context, snapshot) {
-                if (snapshot.hasData) {
-                  return Text(
-                    snapshot.data!.username!,
-                    style: const TextStyle(color: Palette.text),
-                  );
-                } else if (snapshot.hasError) {
-                  return Text(
-                    '${snapshot.error}',
-                    style: const TextStyle(color: Palette.text),
-                  );
-                }
+            Center(
+              child: FutureBuilder<MMFUser>(
+                future: _futureUser,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return Text(
+                      snapshot.data!.username!,
+                      style: const TextStyle(color: Palette.text),
+                    );
+                  } else if (snapshot.hasError) {
+                    return Text(
+                      '${snapshot.error}',
+                      style: const TextStyle(color: Palette.text),
+                    );
+                  }
 
-                // By default, show a loading spinner.
-                return const CircularProgressIndicator();
-              },
-            )
+                  // By default, show a loading spinner.
+                  return const CircularProgressIndicator();
+                },
+              ),
+            ),
+            InkWell(
+              onTap: () => _launchURL(AuthProviders.mmf.authUrl!),
+              child: SignInWithButton(
+                signInFunction: () {},
+                text: AuthProviders.mmf.name,
+                icon: AuthProviders.mmf.icon,
+              ),
+            ),
           ],
         ),
       ),
