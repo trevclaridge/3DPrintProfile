@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:print_profile/view/view.dart';
 import 'package:print_profile/model/model.dart';
 
-void main() {
+void main() async {
+  print(String.fromEnvironment('TEST_STRING'));
+  runApp(const Center(child: CircularProgressIndicator()));
   Startup().startUp();
   runApp(const MyApp());
 }

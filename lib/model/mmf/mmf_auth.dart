@@ -9,7 +9,7 @@ class MMFAuth {
   static const String _authUrl =
       'https://auth.myminifactory.com/web/authorize?client_id=3DPrintingProfile&redirect_uri=http://localhost:62950&response_type=code&state=kjfgierwgn';
 
-  String? fetchAuthCode(String url) {
+  String fetchAuthCode(String url) {
     var startIndexSchema = 'code=';
     var endIndexSchema = '&';
 
@@ -30,10 +30,9 @@ class MMFAuth {
   Future<AuthenticationToken> fetchAthenticationToken(
       String authorizationCode) async {
     String username = '3DPrintingProfile';
-    String password = const String.fromEnvironment('MMF_SECRET',
-        defaultValue: 'environment secret not set');
+    String password = Environment.MMF_SECRET;
     String basicAuth =
-        'Basic ' + base64.encode(utf8.encode('$username:$password'));
+        'Basic ${base64.encode(utf8.encode('$username:$password'))}';
     print(basicAuth);
 
     final response = await http.post(

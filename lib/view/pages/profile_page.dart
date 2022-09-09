@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 part of view;
 
 class MyProfilePage extends StatefulWidget {
@@ -79,6 +81,15 @@ class _MyProfilePageState extends State<MyProfilePage> {
                 signInFunction: () {},
                 text: AuthProviders.mmf.name,
                 icon: AuthProviders.mmf.icon,
+              ),
+            ),
+            SizedBox(height: 20),
+            InkWell(
+              onTap: () => _launchURL(AuthProviders.patreon.authUrl!),
+              child: SignInWithButton(
+                signInFunction: () {},
+                text: AuthProviders.patreon.name,
+                icon: AuthProviders.patreon.icon,
               ),
             ),
           ],

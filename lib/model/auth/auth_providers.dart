@@ -7,7 +7,10 @@ class AuthProviders {
     "MyMiniFactory",
     Image.asset("assets/logos/mmf_logo.png"),
   );
-  static AuthProvider patreon = AuthProvider(null, "Patreon");
+  static AuthProvider patreon = AuthProvider.withIcon(
+      PatreonAuth().patreonAuthUrl,
+      "Patreon",
+      Image.asset("assets/logos/patreon_logo.png"));
   static AuthProvider cults = AuthProvider(null, "Cults3D");
   static AuthProvider thiniverse = AuthProvider(null, "Thingiverse");
   static AuthProvider gambody = AuthProvider(null, "Gambody");
