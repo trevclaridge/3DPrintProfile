@@ -3,7 +3,7 @@ import 'package:print_profile/view/view.dart';
 import 'package:print_profile/model/model.dart';
 
 void main() async {
-  print(String.fromEnvironment('TEST_STRING'));
+  print(const String.fromEnvironment('TEST_STRING'));
   runApp(const Center(child: CircularProgressIndicator()));
   Startup().startUp();
   runApp(const MyApp());
