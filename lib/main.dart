@@ -5,7 +5,7 @@ import 'package:print_profile/model/model.dart';
 void main() async {
   print(const String.fromEnvironment('TEST_STRING'));
   runApp(const Center(child: CircularProgressIndicator()));
-  Startup().startUp();
+  // Startup().startUp();
   runApp(const MyApp());
 }
 
