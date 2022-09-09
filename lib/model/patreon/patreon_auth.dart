@@ -1,8 +1,8 @@
 part of model;
 
 class PatreonAuth {
-  final String _redirectUri = 'http://localhost:49530';
-  // final String _redirectUri = 'https://trevclaridge.github.io/3DPrintProfile/';
+  // final String _redirectUri = 'http://localhost:49530';
+  final String _redirectUri = 'https://trevclaridge.github.io/3DPrintProfile/';
   final String _baseUrl = 'https://www.patreon.com/oauth2/';
 
   String get patreonAuthUrl {
