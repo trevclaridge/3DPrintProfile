@@ -1,16 +1,10 @@
-# print_profile
+# 3DPrintProfile
 
-A new Flutter project.
+3DPrintProfile is an application for 3D printing hobbiest to view the newest creations and updates from their favorite modellers as they become available in one, easily- digestible feed. 
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+List of services 3DPrintProfile wishes to conglomerate:
+* MyMiniFactory
+* Patreon
+* Cults3D
+* Thingiverse
+* Gambody
